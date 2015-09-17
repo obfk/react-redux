@@ -1,15 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 
-class Counter extends Component {
+class Comment extends Component {
   render() {
     return (
-      <h1>Comments</h1>
+      <p>{this.props.text}</p>
     );
   }
 }
 
-Counter.propTypes = {
-
-};
-
-export default Counter;
+export default Comment;

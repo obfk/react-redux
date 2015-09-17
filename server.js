@@ -1,4 +1,3 @@
-const PORT = 8080;
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config');
@@ -10,10 +9,10 @@ new WebpackDevServer(webpack(config), {
   stats: {
     colors: true
   }
-}).listen(PORT, 'localhost', function (err) {
+}).listen(3000, 'localhost', function (err) {
   if (err) {
     console.log(err);
   }
 
-  console.log('Listening at localhost:' + PORT);
+  console.log('Listening at localhost:3000');
 });

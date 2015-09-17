@@ -1,16 +1,27 @@
+import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Counter from '../components/Counter';
-import * as CounterActions from '../actions/counter';
+import Comments from '../components/Comments';
+
+class App extends Component {
+  render() {
+    const { comments } = this.props;
+
+    return (
+      <div>
+        <Comments comments={comments} />
+      </div>
+    );
+  }
+}
 
 function mapStateToProps(state) {
   return {
-    counter: state.counter
+    comments: [
+      {id: 1, text: 'first comment'},
+      {id: 2, text: 'second comment'}
+    ] //state.comments
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(CounterActions, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default connect(mapStateToProps)(App);
